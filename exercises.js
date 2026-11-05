@@ -176,6 +176,14 @@ function buildTriangle(height) {
 //   countWeekendDays([1, 6, 7, 3]) -> 2
 // ---------------------------------------------------------------------
 function countWeekendDays(dayNumbers) {
+    let count = 0;
+    for (let i = 0; i < dayNumbers.length; i++) {
+        const name = dayName(dayNumbers[i]);
+        if (name === "Saturday" || name === "Sunday") {
+            count++;
+        }
+    }
+    return count;
 }
 
 
