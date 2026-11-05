@@ -194,6 +194,17 @@ function countWeekendDays(dayNumbers) {
 //   pointsToGrade(85) -> 2
 // ---------------------------------------------------------------------
 function pointsToGrade(points) {
+    if (points >= 90) {
+        return 1;
+    } else if (points >= 80) {
+        return 2;
+    } else if (points >= 65) {
+        return 3;
+    } else if (points >= 50) {
+        return 4;
+    } else {
+        return 5;
+    }
 }
 
 
@@ -206,6 +217,26 @@ function pointsToGrade(points) {
 //       5 Insufficient
 // ---------------------------------------------------------------------
 function gradeReport(student) {
+    const grade = pointsToGrade(student.points);
+    let gradeText;
+    switch (grade) {
+        case 1:
+            gradeText = "Excellent";
+            break;
+        case 2:
+            gradeText = "Good";
+            break;
+        case 3:
+            gradeText = "Satisfactory";
+            break;
+        case 4:
+            gradeText = "Sufficient";
+            break;
+        case 5:
+            gradeText = "Insufficient";
+            break;
+    }
+    return `${student.name}: ${grade} (${gradeText})`;
 }
 
 
