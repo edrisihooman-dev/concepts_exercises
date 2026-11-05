@@ -322,9 +322,7 @@ function cartTotal(cart) {
         total = total + itemTotal;
     }
     return total;
-    
 }
-
 
 // ---------------------------------------------------------------------
 // Exercise 14: isPrime
@@ -333,6 +331,17 @@ function cartTotal(cart) {
 //   isPrime(7) -> true,  isPrime(9) -> false
 // ---------------------------------------------------------------------
 function isPrime(n) {
+    if (n < 2) {
+        return false;
+    }
+    let divisor = 2;
+    while (divisor * divisor <= n) {
+        if (n % divisor === 0) {
+            return false;
+        }
+        divisor++;
+    }
+    return true;
 }
 
 
