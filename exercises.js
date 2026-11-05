@@ -273,6 +273,16 @@ function isValidChoice(choice) {
 // highest age, return the one that comes first. Empty array gives "".
 // ---------------------------------------------------------------------
 function findOldest(people) {
+    if (people.length === 0) {
+        return "";
+    }
+    let oldestPerson = people[0];
+    for (let i = 1; i < people.length; i++) {
+        if (people[i].age > oldestPerson.age) {
+            oldestPerson = people[i];
+        }
+    }
+    return oldestPerson.name;
 }
 
 
