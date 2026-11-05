@@ -73,6 +73,27 @@ function dayName(dayNumber) {
 //   countVowels("Hello World") -> 3
 // ---------------------------------------------------------------------
 function countVowels(text) {
+
+    let count = 0;
+    for (let i = 0; i < text.length; i++) {
+        switch (text[i]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+            case "A":
+            case "E":
+            case "I":
+            case "O":
+            case "U":
+                count++;
+                break;
+            default:
+                break;
+        }
+    }
+    return count;
 }
 
 
@@ -84,7 +105,24 @@ function countVowels(text) {
 //   fizzBuzz(5) -> "1, 2, Fizz, 4, Buzz"
 // ---------------------------------------------------------------------
 function fizzBuzz(n) {
+    let result  ="";
+    for (let i=1; i<=n; i++) {
+          if (i > 1) {
+            result = result + ", ";
+        }
+        if (i % 3 === 0 && i % 5 === 0) {
+            result = result + "FizzBuzz";
+        } else if (i % 3 === 0) {
+            result = result + "Fizz";
+        } else if (i % 5 === 0) {
+            result = result + "Buzz";
+        } else {
+            result = result + i;
+        }
+    }
+    return result;
 }
+
 
 
 // ---------------------------------------------------------------------
