@@ -321,6 +321,7 @@ function cartTotal(cart) {
         total = total + itemTotal;
     }
     return total;
+    const item = cart[i];
 }
 
 
