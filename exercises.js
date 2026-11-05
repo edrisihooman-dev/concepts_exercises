@@ -249,8 +249,22 @@ function gradeReport(student) {
 //   rockPaperScissors("rock", "paper") -> "Player 2 wins"
 // ---------------------------------------------------------------------
 function rockPaperScissors(choice1, choice2) {
+     if (!isValidChoice(choice1) || !isValidChoice(choice2)) {
+        return "Invalid input";
+    }
+    if (choice1 === choice2) {
+        return "Draw";
+    }
+    if ((choice1 === "rock" && choice2 === "scissors") ||
+        (choice1 === "scissors" && choice2 === "paper") ||
+        (choice1 === "paper" && choice2 === "rock")) {
+        return "Player 1 wins";
+    }
+    return "Player 2 wins";
 }
-
+function isValidChoice(choice) {
+    return choice === "rock" || choice === "paper" || choice === "scissors";
+}
 
 // ---------------------------------------------------------------------
 // Exercise 11: findOldest
