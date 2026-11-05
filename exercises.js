@@ -314,6 +314,7 @@ function namesAtLeastAge(people, minAge) {
 function cartTotal(cart) {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
         let itemTotal = item.price * item.quantity;
         if (item.quantity >= 10) {
             itemTotal *= 0.9; // Apply 10% discount
@@ -321,7 +322,7 @@ function cartTotal(cart) {
         total = total + itemTotal;
     }
     return total;
-    const item = cart[i];
+    
 }
 
 
